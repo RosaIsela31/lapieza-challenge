@@ -14,10 +14,17 @@ const Head = styled.header`
   height: 15rem;
 `;
 
+const Shadow = styled.div`
+  height: 15rem;
+  width: 100%;
+  background-color: rgba(58, 110, 223, 0.8);
+`;
+
 const Header = () => {
   return(
     <Head>
       <Img src={imagen} alt='imagen' />
+      <Shadow />
     </Head>
   )
 }
