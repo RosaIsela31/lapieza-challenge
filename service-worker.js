@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/lapieza-challenge/precache-manifest.73f183cacc98ba3685d3b64fef92936b.js"
+  "/lapieza-challenge/precache-manifest.a771d04c59fc888257f6eb79d96f677e.js"
 );
 
 self.addEventListener('message', (event) => {
