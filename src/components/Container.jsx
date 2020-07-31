@@ -20,6 +20,7 @@ const Wrapper = styled.div`
 
 const Container = () => {
   
+  const [ openform, setOpenForm ] = useState(false);
   const [ data, setData ] = useState([]);
   
   useEffect(() => {
@@ -41,12 +42,15 @@ const Container = () => {
       <Header />
 
       <Wrapper>
-        {/* <Form /> */}
+        { openform ? 
+          <Form /> :
+          null }
         {data.map(item => {
           return( 
             <Card 
               key={item.id}
               title={item.title}
+              setOpenForm={setOpenForm}
             />
           )
         })}

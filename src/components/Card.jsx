@@ -50,7 +50,12 @@ const HourContainer = styled.div`
   font-size: 1.2rem;
 `;
 
-const Card = ({ title, id }) => {
+const Card = ({ title, id, setOpenForm }) => {
+
+  const handleShowForm = () => {
+    setOpenForm(true);
+  }
+
   return (
     <Cards>
         <Circle></Circle>
@@ -62,7 +67,7 @@ const Card = ({ title, id }) => {
           {title}
         </Title>
         <IconContainer>
-          <FaEdit className='fa-edit'/>
+          <FaEdit className='fa-edit' onClick={handleShowForm}/>
           <FaCheck className='fa-check'/>
         </IconContainer>
     </Cards>
