@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from "styled-components";
 import { FiX } from "react-icons/fi";
 
@@ -60,7 +60,9 @@ const TextArea = styled.textarea`
   resize: none;
 `;
 
-const Form = () => {
+const Form = ({ openform, setOpenForm }) => {
+
+  const [prueba, setPrueba] = useState(false)
   
   const [ error, setError ] = useState(false);
   const [ info, setInfo ] = useState(
@@ -86,7 +88,10 @@ const Form = () => {
     };
     
     setError(false);
-    
+  }
+
+  const handleCloseAndSave = () => {
+    setOpenForm(false);
   }
   
   const { title, body } = info;
@@ -95,7 +100,7 @@ const Form = () => {
     <Forms
       onClick={submitUserInfo}
     >
-      <div>
+      <div >
         <InputText 
           name='value'
           placeholder='Title'
@@ -111,7 +116,7 @@ const Form = () => {
         /> 
       </div>
       
-      <Button type='submit' value='enviar' > 
+      <Button type='submit' value='enviar' onClick={handleCloseAndSave}> 
         <FiX className='fi-x'/>
       </Button>
     </Forms>
