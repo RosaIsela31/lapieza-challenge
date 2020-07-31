@@ -43,7 +43,10 @@ const Container = () => {
 
       <Wrapper>
         { openform ? 
-          <Form /> :
+          <Form 
+            setOpenForm={setOpenForm}
+            openform={openform}
+          /> :
           null }
         {data.map(item => {
           return( 
