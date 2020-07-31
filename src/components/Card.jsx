@@ -1,5 +1,9 @@
 import React from 'react';
 import styled from "styled-components";
+import { FaEdit } from "react-icons/fa";
+import { FaCheck } from "react-icons/fa";
+
+import '../App.css';
 
 const Cards = styled.div`
   background-color: #fff;
@@ -25,12 +29,21 @@ const H3 = styled.h3`
   color: #3A6EDF;
 `;
 
+const IconContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 const Card = ({ title, id }) => {
   return (
     <Cards>
       <div>1</div>
       <Title> <H3>Qui este esse</H3>{title}</Title>
-      <div>3</div>
+      <IconContainer>
+        <FaEdit className='fa-edit'/>
+        <FaCheck className='fa-check'/>
+      </IconContainer>
     </Cards>
   )
 }
